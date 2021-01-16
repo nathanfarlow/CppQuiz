@@ -9,13 +9,12 @@ struct Object {
         std::cout << "B ";
     }
 
-    Object& operator=(const Object& o) {
+    Object(Object&& o) {
         std::cout << "C ";
-        return *this;
     }
 };
 
 int main() {
-    Object a;
-    Object b = a;
+    Object o(Object());
+    return 0;
 }
