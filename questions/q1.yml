@@ -1,14 +1,20 @@
 ---
 code: "q1.cpp"
 prompt: >
-  Let's start easy. All C++ examples will be compiled with g++ -std=c++2a -fconcepts.
-  What does the above code print? (If undefined, select 'Undefined behavior'. If
-  the code would not compile, select 'Compilation error'
+  Welcome to the C++ quiz! (Although some of the peculiarities have their origins in C)
+  Let's start easy. What does the above code print? All of the C++ examples in this quiz
+  will be compiled with g++ -std=c++17. (If undefined, select 'Undefined behavior'. If the
+  code would not compile, select 'Compilation error')
 answers:
   - 0
   - 1
-  - 2
+  - -1
   - Undefined behavior
   - Compilation error
-correct: 1
-explanation: "Hello world"
+correct: 4
+explanation: >
+  It is possible for C++ structs to inherit from C++ classes. In fact, the only difference
+  between structs and classes is the fact that member variables are private by default in a
+  class and public by default in a struct. Because val_ was private in MyClass, it will remain
+  private in whatever class/struct inherits from it, leading to a compilation issue by trying
+  to access it in main.

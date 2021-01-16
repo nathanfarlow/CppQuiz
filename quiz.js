@@ -7,28 +7,7 @@ const MAX_ANSWERS = 5;
 let currentQuestion = 0;
 
 let numCorrect = 0;
-
-let questions = [
-    {
-        code: `int main() {
-    for(int i = 0; i < 5; i++);
-    return 0;
-}`,
-
-        prompt: 'What does the above code print?',
-
-        answers: [
-            '1',
-            'Nothing',
-            'Undefined behavior',
-            'Compilation error'
-        ],
-
-        explanation: 'This is the correct answer.',
-
-        correct: 1
-    },
-];
+let questions = [{"code": "#include <iostream>\n\nclass MyClass {\n    int val_ = 1;\n};\n\nstruct MyStruct : MyClass {};\n\nint main() {\n    MyStruct m;\n    std::cout << m.val_ << std::endl;\n\n    return 0;\n}", "prompt": "Welcome to the C++ quiz! (Although some of the peculiarities have their origins in C) Let's start easy. What does the above code print? All of the C++ examples in this quiz will be compiled with g++ -std=c++17. (If undefined, select 'Undefined behavior'. If the code would not compile, select 'Compilation error')\n", "answers": [0, 1, -1, "Undefined behavior", "Compilation error"], "correct": 4, "explanation": "It is possible for C++ structs to inherit from C++ classes. In fact, the only difference between structs and classes is the fact that member variables are private by default in a class and public by default in a struct. Because val_ was private in MyClass, it will remain private in whatever class/struct inherits from it, leading to a compilation issue by trying to access it in main."}, {"code": "#include <iostream>\n\nstruct Object {\n    Object() {\n        std::cout << \"A \";\n    }\n\n    Object(const Object &o) {\n        std::cout << \"B \";\n    }\n\n    Object& operator=(const Object &o) {\n        std::cout << \"C \";\n        return *this;\n    }\n};\n\nint main() {\n    Object a, b = a;\n}", "prompt": "Let's review constructors and operators. What does the above code print?\n", "answers": ["A C", "A A C", "A B", "Undefined behavior", "Compilation error"], "correct": 2, "explanation": "When declaring and initializing an object in the same statement, the copy constructor is invoked, not the assignment operator. In other words, Object b = a is the same as Object b{a}."}];
 
 function getCurrentQuestion() {
     return questions[currentQuestion];
@@ -51,6 +30,10 @@ function setCurrentQuestion(index) {
         $('#question-name').text(`Your score is ${numCorrect}/${questions.length}. Nice job! I hope you learned something new. Isn't C++ crazy?`)
 
         return;
+    } 
+    
+    if(index == questions.length - 1) {
+        $('#next').text('Finish');
     }
 
     currentQuestion = index;
@@ -127,6 +110,8 @@ $(document).ready(function() {
         }
 
         $('#next').show();
+
+        $('#explanation').hide();
 
         numCorrect = 0;
 

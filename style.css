@@ -12,13 +12,14 @@ h2, p {
     color:rgb(200, 200, 200);
 }
 
-h1, h2, p, button {
+h1, h2, button {
     font-family: 'Courier New', monospace;
     text-align: center;
 }
 
 p {
     padding-top: 15px;
+    font-family: 'Courier New', monospace;
 }
 
 button:enabled:hover {
