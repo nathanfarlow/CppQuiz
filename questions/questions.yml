@@ -126,6 +126,7 @@ questions:
  - code: "q8.cpp"
    prompt: >
     This one is kind of tedious. But it's pretty interesting syntax, right?
+    What does the above code print?
    answers:
      - h
      - 3
@@ -139,3 +140,16 @@ questions:
      C. So let's break down the expression into syntax we're familiar with: (&buf)[0][1][2][3].
      Notice that (&buf)[0] == *(&buf) == buf. Then we have buf[1][2][3] and the answer
      becomes clear!
+
+ - code: "q9.cpp"
+   prompt: >
+    What does the above code print?
+   answers:
+     - 0
+     - 1
+     - Undefined behavior
+     - Compilation error
+   correct: 0
+   explanation: >
+     The output is 0. C++ will initialize the remaining elements of a C style array with 0
+     if there are not enough elements in an initializer list.
