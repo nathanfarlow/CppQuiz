@@ -87,3 +87,17 @@ questions:
      This code results in undefined behavior. In a C++ member initializer list, the members are initialized
      in the order that they appear declared in the class itself. Therefore a_(2 * b_) is invoked first, then
      b_(2 * c_), and finally c_(val). Because b_ is uninitialized, the value of a_ is undefined.
+
+ - code: "q6.cpp"
+   prompt: >
+    What does the above code print?
+   answers:
+     - 0 0 0
+     - 0 1 1
+     - 0 1 2
+     - Undefined behavior
+     - Compilation error
+   correct: 3
+   explanation: >
+     The output is 0 1 2. The reason for this is because despite specifying capture by copy in the second lambda,
+     The implicit capture of *this is always captured by reference if either = or & is specified.

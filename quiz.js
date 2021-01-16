@@ -130,6 +130,8 @@ $(document).ready(function() {
 
         $('#explanation').hide();
 
+        $('#next').text('Next Question');
+
         numCorrect = 0;
 
         shuffleAnswers();
