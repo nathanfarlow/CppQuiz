@@ -13,7 +13,7 @@ questions:
      - Compilation error
    correct: 4
    explanation: >
-     This code results in a compilation error. It is indeed possible for C++ structs to inherit from C++
+     This code results in a compilation error. The issue is not that a struct is inheriting from a class. It is indeed possible for C++ structs to inherit from C++
      classes. In fact, the only difference between structs and classes is the fact that member variables
      are private by default in a class and public by default in a struct. Because val_ was private in MyClass,
      it will remain private in whatever class/struct inherits from it, leading to a compilation issue by trying
@@ -45,8 +45,8 @@ questions:
      - A A C
      - A
      - Nothing
-     - Undefined behavior
-     - A A B
+     - A B B
+     - A B
    correct: 2
    explanation: >
      Nothing is printed. Object o(Object()); is actually a forward declaration for a function that
@@ -164,3 +164,27 @@ questions:
    explanation: >
      The ability to return a void from a void function is included in C++ for template
      consistency. C++ concatenates two string literals that are separated by a whitespace.
+
+ - code: "q11.cpp"
+   prompt: >
+    This is an easy one. Or is it? What does the above code print?
+   answers:
+     - 2
+     - 1
+     - 0
+     - Undefined behavior
+     - Compilation error
+   correct: 0
+   explanation: >
+     Had to throw this one in there just to mess with you.
+
+ - code: "q12.cpp"
+   prompt: >
+    Bonus question. Technically, the above code is undefined behavior according to the spec.
+    But will it compile under clang, gcc, and msvc?
+   answers:
+     - Of course not, why would it?
+     - Yeah, C++ compilers are wild
+   correct: 1
+   explanation: >
+     ¯\_(ツ)_/¯
