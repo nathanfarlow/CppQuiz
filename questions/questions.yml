@@ -115,12 +115,12 @@ questions:
    explanation: >
      The output is A B. Crazy, right? 'A' will be printed when we instantiate o. T&& is a universal reference.
      Let's apply the strange rules of universal references. In test(o), o is an lvalue. So by the rules of
-     universal references, param becomes type Object& and T also becomes Object& (Weird, right?). Therefore we
+     universal references, param's type becomes Object& and T also becomes Object& (Weird, right?). Therefore we
      have Object& a = param; so no value is printed because we are just copying references! Next we have
-     test(std::move(o)). Because std::move(o) produces an rvalue, param's type Object&& and T
+     test(std::move(o)). Because std::move(o) produces an rvalue, param's type becomes Object&& and T
      becomes Object. Notice how this is different from the lvalue case. Also note that Object&& is an rvalue
      reference, and not a universal reference. Therefore we have Object a = param. At this point we might expect
-     the move constructor to be invoked, BUT because param is in fact an lvalue (a named rvalue reference), the
+     the move constructor to be invoked, BUT because param itself is in fact an lvalue (a named rvalue reference), the
      copy constructor is invoked to print B! Whew.
 
  - code: "q8.cpp"
