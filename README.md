@@ -1,2 +1,2 @@
 # CppQuiz
-A quiz with some esoteric C++ questions
+A quiz with tricky C++ questions. Take the quiz here: https://nathanfarlow.github.io/CppQuiz/
