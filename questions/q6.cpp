@@ -1,8 +1,9 @@
 #include <iostream>
 
 class Object {
-public:
     int a_ = 0;
+
+public:
 
     void Function() {
         [&]() {

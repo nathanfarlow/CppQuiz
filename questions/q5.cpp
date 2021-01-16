@@ -2,7 +2,9 @@
 
 class Object {
 public:
-    int a_, b_, c_;
+    int a_;
+    int b_;
+    int c_;
 
     Object(int val) : c_(val), b_(2 * c_), a_(2 * b_) {}
 };

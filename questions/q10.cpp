@@ -1,5 +1,3 @@
-#include <iostream>
-
 const void other() {
     return (void)"A" "B" "C";
 }

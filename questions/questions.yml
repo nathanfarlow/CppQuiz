@@ -3,7 +3,7 @@ questions:
  - code: "q1.cpp"
    prompt: >
      Welcome to the C++ quiz! (It's named the C++ quiz even though some of the peculiarities have their origins in C)
-     Let's start easy. What does the above code print? We are using the C++ 17 standard.
+     Let's start easy. What does the above code print? All these examples behave the same with the C++11 standard or newer.
      (If undefined, select 'Undefined behavior'. If the code would not compile, select 'Compilation error')
    answers:
      - 0
@@ -33,7 +33,7 @@ questions:
    explanation: >
      The answer is A B. When declaring and initializing an object in the same
      statement, the copy constructor is invoked, not the assignment operator.
-     In other words, Object b = a is the same as Object b{a}. Side note, returning
+     In other words, Object b = a is the same as Object b(a). Side note: returning
      a value from main is optional and defaults to returning 0. The main function is
      the only place this works, however. Not returning a value from any other function
      is undefined behavior.
@@ -50,7 +50,7 @@ questions:
    correct: 2
    explanation: >
      Nothing is printed. Object o(Object()); is actually a forward declaration for a function that
-     is named o which returns an Object and accepts as a parameter a function pointer that returns an Object.
+     is named o which returns an Object and accepts as a parameter a function that returns an Object.
      This is due to C++'s most vexing parse. If we wanted to create a variable, we'd have to write
      Object o{Object{}};
 
@@ -66,7 +66,7 @@ questions:
    correct: 2
    explanation: >
      bar baz baz is printed. foo is an overloaded function. This means that the function that is called depends
-     on which parameters the argument satisifies. The first foo function has a parameter of
+     on the types of the parameters that are passed. The first foo function has a parameter of
      type lvalue reference, meaning that it will accept lvalues. Because argc is an lvalue,
      this will invoke the first foo function and print "bar". Then the return value is passed
      to the next foo function. The return value is an rvalue (prvalue to be exact). The second
@@ -86,7 +86,7 @@ questions:
    explanation: >
      This code results in undefined behavior. In a C++ member initializer list, the members are initialized
      in the order that they appear declared in the class itself. Therefore a_(2 * b_) is invoked first, then
-     b_(2 * c_), and finally c_(val). Because b_ is uninitialized, the value of a_ is undefined.
+     b_(2 * c_), and finally c_(val). Because b_ is uninitialized when a_(2 * b_) is invoked, the value of a_ is undefined.
 
  - code: "q6.cpp"
    prompt: >
@@ -159,11 +159,11 @@ questions:
     Will it compile? 🤔
    answers:
      - Definitely
-     - No, are you crazy
+     - No, are you crazy?
    correct: 0
    explanation: >
      The ability to return a void from a void function is included in C++ for template
-     consistency. C++ concatenates two string literals that are separated by a whitespace.
+     consistency. Also, C++ concatenates two string literals that are separated by a whitespace.
 
  - code: "q11.cpp"
    prompt: >
