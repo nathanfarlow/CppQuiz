@@ -1,0 +1,14 @@
+---
+code: "q1.cpp"
+prompt: >
+  Let's start easy. All C++ examples will be compiled with g++ -std=c++2a -fconcepts.
+  What does the above code print? (If undefined, select 'Undefined behavior'. If
+  the code would not compile, select 'Compilation error'
+answers:
+  - 0
+  - 1
+  - 2
+  - Undefined behavior
+  - Compilation error
+correct: 1
+explanation: "Hello world"

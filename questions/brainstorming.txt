@@ -1,0 +1,39 @@
+
+
+Easy
+
+0. struct inherits class
+
+1. Declare and assign object
+
+2. Move semantics
+
+3. Object definition is forward declaration
+
+4. initializer list
+
+5. lambda this
+
+6. is_even
+
+auto returns copy instead of reference
+
+7. universal reference
+
+Strange syntax
+
+8. lhs index notation arrays
+
+9. 0 init buffer
+
+10/11 are int/size_t
+
+12.unary plus
+
+13. 1 + 1
+
+14. Return void (const?)
+
+15. default int with main declaration
+
+16. bonus tokens after include
