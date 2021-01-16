@@ -42,7 +42,7 @@ questions:
    prompt: >
     Here's a tricky one. What does the above code print?
    answers:
-     - A A C
+     - A C
      - A
      - Nothing
      - A B B
