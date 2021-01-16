@@ -1,7 +1,3 @@
-
-//Spoilers below! If you haven't taken the quiz yet,
-//I recommend you do that before coming here.
-
 const MAX_ANSWERS = 5;
 
 let currentQuestion = 0;

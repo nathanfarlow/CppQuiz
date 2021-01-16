@@ -8,13 +8,13 @@ h1 {
     padding-top: 30px;
 }
 
-h2, p {
-    color:rgb(200, 200, 200);
-}
-
 h1, h2, button {
     font-family: 'Courier New', monospace;
     text-align: center;
+}
+
+h2, p {
+    color:rgb(200, 200, 200);
 }
 
 p {
