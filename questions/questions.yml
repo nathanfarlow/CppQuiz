@@ -163,7 +163,7 @@ questions:
    correct: 0
    explanation: >
      The ability to return a void from a void function is included in C++ for template
-     consistency. Also, C++ concatenates string literals that are separated by a whitespace.
+     consistency. Also, C++ concatenates string literals that are separated by whitespace.
 
  - code: "q11.cpp"
    prompt: >
