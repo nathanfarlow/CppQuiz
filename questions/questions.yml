@@ -49,7 +49,7 @@ questions:
      - A B
    correct: 2
    explanation: >
-     Nothing is printed. Object o(Object()); is actually a forward declaration for a function that
+     Nothing is printed. Object o(Object()); is actually a declaration for a function that
      is named o which returns an Object and accepts as a parameter a function that returns an Object.
      This is due to C++'s most vexing parse. If we wanted to create a variable, we'd have to write
      Object o{Object{}};
@@ -163,7 +163,7 @@ questions:
    correct: 0
    explanation: >
      The ability to return a void from a void function is included in C++ for template
-     consistency. Also, C++ concatenates two string literals that are separated by a whitespace.
+     consistency. Also, C++ concatenates string literals that are separated by a whitespace.
 
  - code: "q11.cpp"
    prompt: >
