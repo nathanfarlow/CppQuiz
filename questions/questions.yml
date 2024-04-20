@@ -100,7 +100,7 @@ questions:
    correct: 2
    explanation: >
      The output is 0 1 2. The reason for this is because despite specifying capture by copy in the second lambda,
-     The implicit capture of *this is always captured by reference if either = or & is specified.
+     *this is always implicitly captured by reference if either = or & is specified.
  
  - code: "q7.cpp"
    prompt: >
